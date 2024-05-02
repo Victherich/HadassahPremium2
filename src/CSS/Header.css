@@ -1,0 +1,176 @@
+.HeaderWrap{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    height: auto;
+    background-color: rgba(0, 225, 0, 0.5);
+    font-weight: 500;
+    position: fixed;
+    z-index: 11;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: auto;
+}
+
+.HeaderLeft{
+    width: 8%;
+    
+}
+
+.HeaderLeft img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.HeaderRight{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3rem;
+    /* background-color: red; */
+}
+
+.HeaderRight a{
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: 350ms;
+    transform: scale(1);
+    padding: 5px 10px;
+    border-radius: 0px 10px 0px 10px ;
+
+}
+
+.HeaderRightActive{
+    background-color:rgba(0, 0, 0, 0.6);
+    
+}
+
+.HeaderRight a:hover{
+    transform: scale(1.1);
+    color:white;
+}
+
+.HeaderRight a:active{
+    transform: scale(0.9);
+}
+
+.Burger, .BurgerHome{
+    display: none;
+}
+
+
+@media screen and (max-width:1024px) {
+    .HeaderWrap{
+        padding: 10px;
+    }
+    .HeaderRight{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:884px){
+    .Burger{
+        display: flex;
+        font-size: 1.3rem;
+    }
+    .Burger h3{
+        color: green;
+    }
+
+    .BurgerHome{
+        display: flex;
+        font-size: 1.3rem;
+    }
+    .BurgerHome h3{
+        color: gold;
+    }
+
+
+    .HeaderRight{
+        display: none;
+    }
+    
+    .HeaderRightMobile{
+        display: flex;
+        justify-content: space-around;
+        position:absolute;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(192, 247, 192, 0.9);
+        /* background-color:rgba(0, 128, 0, 0.7); */
+        /* background-color: rgb(0, 255, 0,0.7); */
+        overflow-y: scroll;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .HeaderRightMobile a{
+        text-decoration: none;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: 350ms;
+        transform: scale(1);
+        /* padding: 5px 10px; */
+        border-radius: 0px 10px 0px 10px ;
+        color: black;
+
+        padding: 5px 30%;
+    }
+    .HeaderRightMobile a:hover{
+        color: green;
+        font-weight: bold;
+        transform: scale(1.2);
+    }
+    .HeaderRightActive{
+        color: white !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .HeaderRight{
+        width: 70%;
+    }
+    .HeaderRightMobile{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:428px) {
+    .Header{
+        width: 100%;
+    }
+    .HeaderLeft{
+        width: 12%;
+    }
+    .HeaderRight{
+        width: 80%;
+        font-size: 1rem;
+        justify-content: space-between;
+    }
+    .HeaderRightMobile{
+        width: 70%;
+    }
+    .HeaderRightMobile a{
+        padding: 5px 20%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .HeaderRight{
+        width: 80%;
+        font-size: 0.8rem;
+    }
+}
