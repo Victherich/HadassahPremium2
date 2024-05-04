@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import "../CSS/Header.css"
 import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect ,useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Context } from './Context'
 import Logo from "../Images/logo.png"
@@ -23,7 +23,17 @@ const Header = () => {
     navigate("/trainingonlypage")
   }
 
+  
+
+
+ 
   const [mobileMenu,setMobileMenu]=useState(false)
+
+
+  const toggleMobileMenu = () => {
+    setMobileMenu(!mobileMenu);
+  };
+
 
   return (
     <div className='HeaderWrap'>
@@ -52,8 +62,8 @@ const Header = () => {
 )}
 
 
-        <div className={location.pathname==="/"?'BurgerHome':"Burger"}>
-            {mobileMenu===false&&<h3 onClick={()=>setMobileMenu(true)}>Menu</h3>}
+        <div className={location.pathname==="/"||location.pathname==="/agriclearnhub"?'BurgerHome':"Burger"}>
+            {mobileMenu===false&&<h3 onClick={toggleMobileMenu}>Menu</h3>}
         </div>
         
       </div>

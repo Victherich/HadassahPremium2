@@ -19,6 +19,7 @@ import { Context } from './component/Context';
 import AboutUs from './component/AboutUs';
 import Products from './component/Products';
 import Solutions from './component/Solutions';
+import AgricLearnHub from './component/AgricLearnHub';
 // import LandingPage from './component/LandingPage';
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
               <Route path ="/products" element={<Products/>}/>
               <Route path ="/solutions" element={<Solutions/>}/>
               <Route path = "/aboutus" element={<AboutUs/>}/>
+              <Route path ="/agriclearnhub" element={<AgricLearnHub/>}/>
           </Routes>
           <Footer/>
       </BrowserRouter>

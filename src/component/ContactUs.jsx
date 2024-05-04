@@ -106,8 +106,27 @@ const handleLocation =()=>{
     window.history.back()
 }
 
+useEffect(()=>{
+    if(formData.message!==""){
+        setEnablealidatio(true)
+    }
+},[[formData]])
 
+const [isLoading, setIsLoading] = useState(true);
+useEffect(() => {
+    // Function to handle window load event
+    const handleLoad = () => {
+      setIsLoading(false); // Set loading state to false when window finishes loading
+    };
 
+    // Attach event listener for window load
+    window.addEventListener('load', handleLoad);
+
+    // Cleanup function to remove event listener
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []); 
 
   return (
     <div className='ContactUsWrap'>
@@ -118,7 +137,7 @@ const handleLocation =()=>{
         <div className='ContactUsBody'>
                 
                 <div className='ContactUsBodyLeft'>
-                    <form action="https://formsubmit.co/digitalpremiumtech@gmail.com" method="POST">
+                    <form action="https://formsubmit.co/hadassahpremium247@gmail.com" method="POST">
                         <input type="text" name="Order Name" value={formData.orderName} hidden/>
                         <label>
                             <div className='InputLabelChild'>
@@ -175,7 +194,7 @@ const handleLocation =()=>{
                             {openSubmit&&
                             <div className='FormSubmitUiWrap'>
                                 <div className='FormSubmitUi'>
-                                <p>You are about to submit your request and one of our representatives shall surely get back to you as soon as possible. Click on submit now and then expect our callback. Thanks.</p>
+                                <p>Thank you for contacting Hadassah Premium, please click the <span style={{fontWeight:"bold",color:"green"}}>Submit now</span> button and one of our representatives shall contact you as soon as possible. Thanks </p>
                                 <button type="submit">Submit Now</button>
                                 <p onClick={()=>setOpenSubmit(false)} style={{cursor:"pointer"}}>X</p>
                             </div>
@@ -188,7 +207,7 @@ const handleLocation =()=>{
        
                 </div>
                 <div className='ContactUsBodyRight'>
-                    <img src={Logo} alt="Contact us"/>
+                    {isLoading&&<img src={Logo} alt="Contact us"/>}
 
          
                 </div>
